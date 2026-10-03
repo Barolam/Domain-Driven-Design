@@ -57,7 +57,8 @@
     </dependencies>
 
     <build>
-        <sourceDirectory>dependencies/src/main/java</sourceDirectory>
+        <sourceDirectory>${project.basedir}/dependencies/src/main/java</sourceDirectory>
+        <testSourceDirectory>${project.basedir}/dependencies/src/test/java</testSourceDirectory>
         <plugins>
             <!-- Maven Compiler Plugin -->
             <plugin>
