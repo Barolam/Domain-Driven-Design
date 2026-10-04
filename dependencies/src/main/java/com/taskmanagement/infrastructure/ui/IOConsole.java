@@ -17,23 +17,23 @@ public class IOConsole {
     }
 
     public void runDemo() {
-        System.out.println("=== CHẠY MÔ PHỎNG LUỒNG CONSOLE ===");
+        System.out.println("=== CHAY MO PHONG LUONG CONSOLE ===");
         TaskInputDTO input = new TaskInputDTO(
-            "Hoàn thành báo cáo Clean Architecture",
-            "Viết phần phân tích DDD và Clean Architecture bằng Java",
+            "Hoan thanh bao cao Clean Architecture",
+            "Viet phan phan tich DDD và Clean Architecture bang Java",
             Instant.now().plus(1, ChronoUnit.DAYS),
             Priority.HIGH,
             UUID.randomUUID()
         );
 
-        System.out.println("1. Tạo Task mới:");
+        System.out.println("1. Tao Task moi:");
         TaskOutputDTO created = taskControl.createTask(input);
         UUID taskId = UUID.fromString(created.taskId());
 
-        System.out.println("2. Bắt đầu Task (TODO -> IN_PROGRESS):");
+        System.out.println("2. Bat dau Task (TODO -> IN_PROGRESS):");
         taskControl.startTask(taskId);
 
-        System.out.println("3. Hoàn thành Task (IN_PROGRESS -> DONE):");
+        System.out.println("3. Hoan thanh Task (IN_PROGRESS -> DONE):");
         taskControl.completeTask(taskId);
     }
 }
