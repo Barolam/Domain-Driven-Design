@@ -24,26 +24,26 @@ public class Main {
 
         while (true) {
             System.out.println("\n=========================================");
-            System.out.println("   HỆ THỐNG QUẢN LÝ TÁC VỤ (INTERACTIVE)  ");
+            System.out.println("   HE THONG QUAN LY TAC VU (INTERACTIVE)  ");
             System.out.println("=========================================");
-            System.out.println("1. Tạo Task mới (Nhập từ bàn phím)");
-            System.out.println("2. Bắt đầu Task (TODO -> IN_PROGRESS)");
-            System.out.println("3. Hoàn thành Task (IN_PROGRESS -> DONE)");
-            System.out.println("0. Thoát");
-            System.out.print("Chọn chức năng (0-3): ");
+            System.out.println("1. Tao Task moi (Nhap tu ban phim)");
+            System.out.println("2. Bat dau Task (TODO -> IN_PROGRESS)");
+            System.out.println("3. Hoan thanh Task (IN_PROGRESS -> DONE)");
+            System.out.println("0. Thoat");
+            System.out.print("Chon chưc nang (0-3): ");
 
             String choice = scanner.nextLine().trim();
 
             try {
                 switch (choice) {
                     case "1" -> {
-                        System.out.print("Nhập tiêu đề Task (3-100 ký tự): ");
+                        System.out.print("Nhap tieu de Task (3-100 ký tự): ");
                         String title = scanner.nextLine();
 
-                        System.out.print("Nhập mô tả Task: ");
+                        System.out.print("Nhap mo ta Task: ");
                         String description = scanner.nextLine();
 
-                        System.out.print("Chọn mức ưu tiên (1: LOW, 2: MEDIUM, 3: HIGH): ");
+                        System.out.print("Chon muc uu tien (1: LOW, 2: MEDIUM, 3: HIGH): ");
                         String pChoice = scanner.nextLine();
                         Priority priority = switch (pChoice) {
                             case "1" -> Priority.LOW;
@@ -61,32 +61,32 @@ public class Main {
 
                         var result = control.createTask(input);
                         currentTaskId = UUID.fromString(result.taskId());
-                        System.out.println("-> ĐÃ TẠO THÀNH CÔNG Task ID: " + currentTaskId);
+                        System.out.println("-> DA TAO THANH CONG Task ID: " + currentTaskId);
                     }
                     case "2" -> {
                         if (currentTaskId == null) {
-                            System.out.print("Nhập UUID của Task cần bắt đầu: ");
+                            System.out.print("Nhap UUID cUa Task can bat dau: ");
                             currentTaskId = UUID.fromString(scanner.nextLine().trim());
                         }
                         control.startTask(currentTaskId);
-                        System.out.println("-> ĐÃ BẮT ĐẦU TASK!");
+                        System.out.println("-> ĐA BAT DAU TASK!");
                     }
                     case "3" -> {
                         if (currentTaskId == null) {
-                            System.out.print("Nhập UUID của Task cần hoàn thành: ");
+                            System.out.print("Nhap UUID cUa Task can hoan thanh: ");
                             currentTaskId = UUID.fromString(scanner.nextLine().trim());
                         }
                         control.completeTask(currentTaskId);
-                        System.out.println("-> ĐÃ HOÀN THÀNH TASK!");
+                        System.out.println("-> DA HOAN THANH TASK!");
                     }
                     case "0" -> {
-                        System.out.println("Thoát chương trình.");
+                        System.out.println("Thoat chuong trinh.");
                         return;
                     }
-                    default -> System.out.println("Lựa chọn không hợp lệ, vui lòng nhập từ 0 đến 3.");
+                    default -> System.out.println("Lua chon khong hop le, vui long nhap tu 0 den 3.");
                 }
             } catch (Exception e) {
-                System.out.println("LỖI VI PHẠM NGHIỆP VỤ: " + e.getMessage());
+                System.out.println("LOI VI PHAM: " + e.getMessage());
             }
         }
     }
