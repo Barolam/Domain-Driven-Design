@@ -2,7 +2,6 @@ package com.taskmanagement.infrastructure.config;
 
 import com.taskmanagement.adapter.persistence.IOSaveToSQLite;
 import com.taskmanagement.adapter.presenter.TaskConsolePresenter;
-import com.taskmanagement.application.boundary.TaskSaving;
 import com.taskmanagement.application.boundary.TaskShowing;
 import com.taskmanagement.application.control.TaskControl;
 import com.taskmanagement.application.dto.TaskInputDTO;
@@ -17,8 +16,8 @@ public class Main {
     public static void main(String[] args) {
         // Khởi tạo Presenter và Storage
         TaskShowing consolePresenter = new TaskConsolePresenter();
-        TaskSaving sqliteStorage = new IOSaveToSQLite();
-        TaskControl control = new TaskControl(consolePresenter, sqliteStorage);
+        IOSaveToSQLite sqliteStorage = new IOSaveToSQLite();
+        TaskControl control = new TaskControl(consolePresenter, sqliteStorage, sqliteStorage);
 
         Scanner scanner = new Scanner(System.in);
         UUID currentTaskId = null;

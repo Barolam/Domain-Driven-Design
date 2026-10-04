@@ -1,6 +1,6 @@
 package com.taskmanagement.infrastructure.api;
 
-import com.taskmanagement.adapter.persistence.IOSaveToMemory;
+import com.taskmanagement.adapter.persistence.IOSaveToSQLite;
 import com.taskmanagement.application.control.TaskControl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,12 +13,12 @@ public class ApiApplication {
     }
 
     @Bean
-    IOSaveToMemory taskRepository() {
-        return new IOSaveToMemory();
+    IOSaveToSQLite taskRepository() {
+        return new IOSaveToSQLite();
     }
 
     @Bean
-    TaskControl taskControl(IOSaveToMemory repository) {
+    TaskControl taskControl(IOSaveToSQLite repository) {
         return new TaskControl(null, repository, repository);
     }
 }
