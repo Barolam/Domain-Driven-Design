@@ -16,10 +16,10 @@ public class GUISwing {
     }
 
     public void simulateUserClick() {
-        System.out.println("=== CHẠY MÔ PHỎNG SWING GUI ===");
+        System.out.println("=== CHAY MO PHONG SWING GUI ===");
         TaskInputDTO input = new TaskInputDTO(
-            "Thiết kế Sơ đồ UML trên Draw.io",
-            "Vẽ mô hình Class Diagram theo chuẩn DIP và ECB",
+            "Thiet ke So do UML tren Draw.io",
+            "Ve mo hinh Class Diagram theo chuan DIP va ECB",
             Instant.now().plus(3, ChronoUnit.DAYS),
             Priority.MEDIUM,
             UUID.randomUUID()

@@ -1,10 +1,10 @@
 package com.taskmanagement.domain.task.enums;
 
 public enum TaskStatus {
-    TODO("Cần làm"),
-    IN_PROGRESS("Đang thực hiện"),
-    DONE("Đã hoàn thành"),
-    CANCELLED("Đã hủy");
+    TODO("Can lam"),
+    IN_PROGRESS("Dang thuc hien"),
+    DONE("Da hoan thanh"),
+    CANCELLED("Da huy");
 
     private final String description;
 

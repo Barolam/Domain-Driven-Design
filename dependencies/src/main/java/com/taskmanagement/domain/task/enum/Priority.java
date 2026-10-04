@@ -1,8 +1,8 @@
 package com.taskmanagement.domain.task.enums;
 
 public enum Priority {
-    LOW("Thấp"),
-    MEDIUM("Trung bình"),
+    LOW("Thap"),
+    MEDIUM("Trung binh"),
     HIGH("Cao");
 
     private final String label;

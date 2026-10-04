@@ -16,11 +16,11 @@ public class WebUI {
     }
 
     public void handleHttpRequest() {
-        System.out.println("=== CHẠY MÔ PHỎNG WEB REST HTTP REQUEST ===");
+        System.out.println("=== CHAY MO PHONG WEB REST HTTP REQUEST ===");
         TaskInputDTO input = new TaskInputDTO(
-            "Review mã nguồn Java của nhóm",
-            "Kiểm tra tính tuân thủ quy tắc Clean Architecture",
-            Instant.now().minus(1, ChronoUnit.DAYS), // Quá hạn
+            "Review ma nguon Java cua nhom",
+            "Kiem tra tinh tuan thu quy tac Clean Architecture",
+            Instant.now().minus(1, ChronoUnit.DAYS),
             Priority.HIGH,
             UUID.randomUUID()
         );
